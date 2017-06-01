@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+
+	<classPathEntry  location="E:\repository\mysql\mysql-connector-java\5.1.34\mysql-connector-java-5.1.34.jar"/>  
+
+  <context id="context1" targetRuntime="MyBatis3" >
+  
+    <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">  
+            <property name="searchString" value="Example$" />  
+            <property name="replaceString" value="Criteria" />  
+        </plugin> 
+        
+
+    <commentGenerator>  
+	   <property name="suppressAllComments" value="true" />   <!-- 是否去除自动生成的注释 true：是 ： false:否 -->  
+	 </commentGenerator> 
+	
+	<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/test" userId="root"/>
+	
+	<javaModelGenerator targetPackage="com.shua1.xiaoyingcoudan.base.model" targetProject="xiaoyingcoudan-base" />
+    <sqlMapGenerator targetPackage="com.shua1.xiaoyingcoudan.base.mapper" targetProject="xiaoyingcoudan-base" />
+	<javaClientGenerator targetPackage="com.shua1.xiaoyingcoudan.base.mapper" targetProject="xiaoyingcoudan-base" type="XMLMAPPER" />
+	
+        <table  tableName="emp" domainObjectName="EmpInfo"
+	    	enableCountByExample="false" 
+	      	enableUpdateByExample="false" 
+			enableDeleteByExample="false" 
+			enableSelectByExample="false" 
+			selectByExampleQueryId="false" 
+	    >
+	     
+	    <generatedKey column="ID" sqlStatement="Mysql"  identity="true" />
+	     <!--
+	    -->
+   </table>    
+
+  </context>
+</generatorConfiguration>
